@@ -10,6 +10,7 @@ class Airport
     end
   #
     def land(plane)
+       raise 'no landing as weather is stormy' if stormy?
   #     raise AirportError, "Weather is stormy, cannot land." if stormy?
   #     raise PlaneError, "Plane already on the ground" unless plane.flying?
   #     raise AirportError, "Airport is full"
@@ -24,13 +25,13 @@ class Airport
   # #     plane.delete(plane)
     end
   # #
-  # private
+  private
   #     def full?
   #      plane >= capacity
   #     end
   #
-  #     def empty?
-  #       plane.empty?
-  #     end
+    def stormy?
+      rand(1..20) > 14
+    end
 
 end
