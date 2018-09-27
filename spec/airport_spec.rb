@@ -2,27 +2,21 @@ require 'airport'
 
 describe Airport do
 
-  describe 'initialize' do
-    it 'allows reading and writing for :plane' do
-        Airport = Airport.new
-        expect(Airport.plane).to eq []
-      end
-
-      it 'allows reading and writing for :capacity' do
-        expect(Airport.capacity).to eq []
-    end
-  end
-
-
+  # it 'has a default capacity' do
+  #   expect(Airport.capacity).to eq Airport:: DEFAULT_CAPACITY
+  # end
   describe '#land(plane)' do
-    it 'confirm successful landing' do
-      expect { Airport.land(plane) }.to eq 'land'
+    it 'instructs a plane to land' do
+      expect(subject).to respond_to(:land).with(1).argument
     end
 end
 
-describe '#take_off(plane)' do
-  it 'confirms take off' do
-    expect{ Airport.take_off(plane) }.to eq
-  end
-end 
+#  describe '#take_off(plane)' do
+#     it 'confirms take off' do
+#       expect{ Airport.take_off(plane) }.to eq
+#     end
+# end
+
+
+
 end
