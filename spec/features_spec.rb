@@ -17,6 +17,6 @@ require 'Airport'
  it'plane to take off' do
    airport = Airport.new
    plane = Plane.new
-   expect { airport.take_off }.not_to raise_error
+   expect { airport.take_off(plane) }.not_to raise_error
  end
  end

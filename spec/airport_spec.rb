@@ -11,9 +11,10 @@ end
 
  describe '#take_off(plane)' do
     it 'confirms take off' do
-     expect(airport).to respond_to(:take_off)
+     expect(airport).to respond_to(:take_off).with(1).argument
     end
 end
+
 
 
 

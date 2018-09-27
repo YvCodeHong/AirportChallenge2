@@ -16,7 +16,7 @@ class Airport
       plane
     end
   #
-    def take_off
+    def take_off(plane)
   # #     raise AirportError, "Weather is stormy, cannot take off." if stormy?
   # #     raise PlaneError, "Plane already inflight" if plane.flying?
   # #     raise Airport, "Plane not in current airport" unless registered?(plane)
