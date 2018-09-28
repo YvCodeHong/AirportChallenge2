@@ -1,24 +1,22 @@
 class Airport
   # DEFAULT_CAPACITY = 10
   #
-  attr_reader :plane ,:capacity
-  # attr_accessor :capacity
-  #
-    def initialize
+  attr_reader :plane
+    def initialize(capacity)
       @plane = []
-      @capacity = []
+      @capacity = capacity
     end
   #
     def land(plane)
-       raise 'no landing as weather is stormy' if stormy?
+      raise "Airport is full" if full?
+      # raise 'no landing as weather is stormy' if stormy?
   #     raise AirportError, "Weather is stormy, cannot land." if stormy?
   #     raise PlaneError, "Plane already on the ground" unless plane.flying?
-  #     raise AirportError, "Airport is full"
-      plane
+      @plane << plane
     end
   #
     def take_off(plane)
-  # #     raise AirportError, "Weather is stormy, cannot take off." if stormy?
+      # raise 'Weather is stormy, cannot take off.' if stormy?
   # #     raise PlaneError, "Plane already inflight" if plane.flying?
   # #     raise Airport, "Plane not in current airport" unless registered?(plane)
   #     plane.take_off
@@ -26,9 +24,9 @@ class Airport
     end
   # #
   private
-  #     def full?
-  #      plane >= capacity
-  #     end
+      def full?
+       @plane.length >= @capacity
+      end
   #
     def stormy?
       rand(1..20) > 14
