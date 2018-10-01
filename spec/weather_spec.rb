@@ -1,8 +1,6 @@
 require 'weather'
 
 describe Weather do
-  # subject(:weather) { described_class.new }
-
   describe '#stormy?' do
     it 'is not stormy' do
       allow(subject).to receive(:stormy?).and_return false
